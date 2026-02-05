@@ -1,14 +1,30 @@
+# Python cache
 __pycache__/
-.DS_Store
-.env
-.vscode/
-.idea/
 *.pyc
 *.pyd
 *.pyo
+
+# macOS junk
+.DS_Store
+**/.DS_Store
+
+# Environments
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# Logs
 *.log
+
+# Jupyter
 *.ipynb_checkpoints
+
+# Playground junk
 data/
 notebooks/
 dev_*.py
+
+# Exclude the Password_Vault project
 src/projects/Password_Vault/
