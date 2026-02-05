@@ -17,7 +17,7 @@ def main():
     add.add_argument("service")
     add.add_argument("username")
     add.add_argument("password")
-    add.add_argument("--notes", default=None)
+    add.add_argument("notes", nargs="*", default=None)
 
     # list
     sub.add_parser("list")
@@ -45,7 +45,8 @@ def main():
 
     # dispatch commands
     if args.command == "add":
-        mgr.add_entry(args.service, args.username, args.password, args.notes)
+        notes = " ".join(args.notes) if args.notes else None
+        mgr.add_entry(args.service, args.username, args.password, notes)
         save_vault(VAULT_FILE, vault, key)
         print("Entry added")
 
@@ -56,11 +57,15 @@ def main():
     elif args.command == "search":
         results = mgr.find_entries(args.query)
         for e in results:
-            print(f"{e.service}: {e.username}")
+            print(f"{e.service}") 
+            print(f"username: {e.username}")
+            print(f"password: {e.password}")
+            if e.notes:
+                print(f"notes: {e.notes}")          
 
     elif args.command == "remove":
         if mgr.remove_entry(args.service):
-            save_vault(VAULT_FILE, key)
+            save_vault(VAULT_FILE, vault, key)
             print("Entry removed,")
         else:
             print("No such entry.")

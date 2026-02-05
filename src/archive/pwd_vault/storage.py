@@ -36,9 +36,9 @@ def load_vault(path: str, key: bytes) -> Vault:
             encrypted_data = f.read()
 
         decrypted_bytes = decrypt(encrypted_data, key)
-        print("DECRYPTED:", decrypted_bytes)
+        
         data = json.loads(decrypted_bytes.decode("utf-8"))
-        print(data)
+        
         # rebuild entries
         entries = [
             VaultEntry(

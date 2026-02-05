@@ -1,0 +1,15 @@
+vault.dat
+vault.salt
+__pycache__/
+.DS_Store
+.env
+.vscode/
+.idea/
+*.pyc
+*.pyd
+*.pyo
+*.log
+*.ipynb_checkpoints
+data/
+notebooks/
+dev_*.py
