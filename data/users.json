@@ -1,7 +1,0 @@
-{
-    "users": [
-        {"name": "Arpad", "age": 49, "city": "Budaörs"},
-        {"name": "Anna", "age": 32, "city": "Budapest"},
-        {"name": "Peter", "age": 28, "city": "Szeged"}
-    ]
-}
